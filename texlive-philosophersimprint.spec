@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /macros/latex/contrib/philosophersimprint
+# catalog-date 2008-08-23 00:06:02 +0200
+# catalog-license lppl
+# catalog-version 1.0
 Name:		texlive-philosophersimprint
 Version:	1.0
 Release:	1
@@ -61,6 +67,7 @@ distributed fonts, only.
 %doc %{_texmfdistdir}/source/latex/philosophersimprint/Makefile
 %doc %{_texmfdistdir}/source/latex/philosophersimprint/philosophersimprint.dtx
 %doc %{_texmfdistdir}/source/latex/philosophersimprint/philosophersimprint.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -71,3 +78,5 @@ distributed fonts, only.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar bibtex tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
