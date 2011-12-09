@@ -1,11 +1,11 @@
-# revision 15878
+# revision 24753
 # category Package
 # catalog-ctan /macros/latex/contrib/philosophersimprint
-# catalog-date 2008-08-23 00:06:02 +0200
+# catalog-date 2011-11-29 10:19:57 +0100
 # catalog-license lppl
-# catalog-version 1.0
+# catalog-version 1.1
 Name:		texlive-philosophersimprint
-Version:	1.0
+Version:	1.1
 Release:	1
 Summary:	Typesetting articles for "Philosophers' Imprint"
 Group:		Publishing
@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 In its mission statement we read "Philosophers' Imprint is a
@@ -31,41 +28,37 @@ the World Wide Web by the University of Michigan Digital
 Library. The mission of the Imprint is to promote a future in
 which funds currently spent on journal subscriptions are
 redirected to the dissemination of scholarship for free, via
-the Internet". The journal used to accept manuscripts in Rich
-Text Format only. However, for many authors, especially from
-the field of logic, TeX seems to be a better choice. The author
-was commissioned to write a LaTeX class for the journal. The
-class helps authors to typeset their own articles in 'Web-
-ready' format. No assumption is made about the fonts available
-to the author: the class uses freely available and freely
-distributed fonts, only.
+the Internet". The class helps authors to typeset their own
+articles in "Web-ready" format. No assumption is made about the
+fonts available to the author: the class itself is restricted
+to freely available and freely distributed fonts, only.
 
 %pre
-    %_texmf_mktexlsr_pre
+    %{_sbindir}/texlive.post
 
 %post
-    %_texmf_mktexlsr_post
+    %{_sbindir}/texlive.post
 
 %preun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
+	%{_sbindir}/texlive.post
     fi
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/bibtex/bib/philosophersimprint/philosophersimprint.bib
 %{_texmfdistdir}/tex/latex/philosophersimprint/philosophersimprint.cls
+%doc %{_texmfdistdir}/doc/latex/philosophersimprint/Makefile
 %doc %{_texmfdistdir}/doc/latex/philosophersimprint/README
+%doc %{_texmfdistdir}/doc/latex/philosophersimprint/philosophersimprint.bib
 %doc %{_texmfdistdir}/doc/latex/philosophersimprint/philosophersimprint.pdf
 %doc %{_texmfdistdir}/doc/latex/philosophersimprint/sample.pdf
 %doc %{_texmfdistdir}/doc/latex/philosophersimprint/sample.tex
 #- source
-%doc %{_texmfdistdir}/source/latex/philosophersimprint/Makefile
 %doc %{_texmfdistdir}/source/latex/philosophersimprint/philosophersimprint.dtx
 %doc %{_texmfdistdir}/source/latex/philosophersimprint/philosophersimprint.ins
 %doc %{_tlpkgobjdir}/*.tlpobj
@@ -78,6 +71,6 @@ distributed fonts, only.
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar bibtex tex doc source %{buildroot}%{_texmfdistdir}
+cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
 mkdir -p %{buildroot}%{_tlpkgobjdir}
 cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
