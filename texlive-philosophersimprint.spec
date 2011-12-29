@@ -33,16 +33,8 @@ articles in "Web-ready" format. No assumption is made about the
 fonts available to the author: the class itself is restricted
 to freely available and freely distributed fonts, only.
 
-%pre
-    %{_sbindir}/texlive.post
-
 %post
     %{_sbindir}/texlive.post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-    fi
 
 %postun
     if [ $1 -eq 0 ]; then
@@ -61,7 +53,6 @@ to freely available and freely distributed fonts, only.
 #- source
 %doc %{_texmfdistdir}/source/latex/philosophersimprint/philosophersimprint.dtx
 %doc %{_texmfdistdir}/source/latex/philosophersimprint/philosophersimprint.ins
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -72,5 +63,3 @@ to freely available and freely distributed fonts, only.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
