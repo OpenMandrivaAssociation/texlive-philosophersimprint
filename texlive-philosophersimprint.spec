@@ -6,7 +6,7 @@
 # catalog-version 1.1
 Name:		texlive-philosophersimprint
 Version:	1.1
-Release:	1
+Release:	2
 Summary:	Typesetting articles for "Philosophers' Imprint"
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/philosophersimprint
