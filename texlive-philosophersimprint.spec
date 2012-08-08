@@ -1,12 +1,12 @@
-# revision 24753
+# revision 26831
 # category Package
 # catalog-ctan /macros/latex/contrib/philosophersimprint
-# catalog-date 2011-11-29 10:19:57 +0100
+# catalog-date 2012-06-03 22:54:07 +0200
 # catalog-license lppl
-# catalog-version 1.1
+# catalog-version 1.2
 Name:		texlive-philosophersimprint
-Version:	1.1
-Release:	2
+Version:	1.2
+Release:	1
 Summary:	Typesetting articles for "Philosophers' Imprint"
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/philosophersimprint
