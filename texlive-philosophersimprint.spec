@@ -63,3 +63,25 @@ to freely available and freely distributed fonts, only.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Aug 08 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.2-1
++ Revision: 812749
+- Update to latest release.
+
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.1-2
++ Revision: 754894
+- Rebuild to reduce used resources
+
+* Fri Dec 09 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.1-1
++ Revision: 739867
+- texlive-philosophersimprint
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.0-1
++ Revision: 719250
+- texlive-philosophersimprint
+- texlive-philosophersimprint
+- texlive-philosophersimprint
+- texlive-philosophersimprint
+
