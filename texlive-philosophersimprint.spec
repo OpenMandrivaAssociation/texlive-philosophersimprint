@@ -1,11 +1,11 @@
-# revision 26831
+# revision 28845
 # category Package
 # catalog-ctan /macros/latex/contrib/philosophersimprint
-# catalog-date 2012-06-03 22:54:07 +0200
+# catalog-date 2013-01-15 09:51:57 +0100
 # catalog-license lppl
-# catalog-version 1.2
+# catalog-version 1.3
 Name:		texlive-philosophersimprint
-Version:	1.2
+Version:	1.3
 Release:	1
 Summary:	Typesetting articles for "Philosophers' Imprint"
 Group:		Publishing
@@ -63,25 +63,3 @@ to freely available and freely distributed fonts, only.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Aug 08 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.2-1
-+ Revision: 812749
-- Update to latest release.
-
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.1-2
-+ Revision: 754894
-- Rebuild to reduce used resources
-
-* Fri Dec 09 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.1-1
-+ Revision: 739867
-- texlive-philosophersimprint
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.0-1
-+ Revision: 719250
-- texlive-philosophersimprint
-- texlive-philosophersimprint
-- texlive-philosophersimprint
-- texlive-philosophersimprint
-
