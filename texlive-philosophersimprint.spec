@@ -1,19 +1,13 @@
-# revision 28845
-# category Package
-# catalog-ctan /macros/latex/contrib/philosophersimprint
-# catalog-date 2013-01-15 09:51:57 +0100
-# catalog-license lppl
-# catalog-version 1.3
 Name:		texlive-philosophersimprint
-Version:	1.4
-Release:	2
+Version:	56954
+Release:	1
 Summary:	Typesetting articles for "Philosophers' Imprint"
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/philosophersimprint
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/philosophersimprint.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/philosophersimprint.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/philosophersimprint.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/philosophersimprint.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/philosophersimprint.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/philosophersimprint.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -34,29 +28,24 @@ fonts available to the author: the class itself is restricted
 to freely available and freely distributed fonts, only.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/latex/philosophersimprint/philosophersimprint.cls
-%doc %{_texmfdistdir}/doc/latex/philosophersimprint/Makefile
-%doc %{_texmfdistdir}/doc/latex/philosophersimprint/README
-%doc %{_texmfdistdir}/doc/latex/philosophersimprint/philosophersimprint.bib
-%doc %{_texmfdistdir}/doc/latex/philosophersimprint/philosophersimprint.pdf
-%doc %{_texmfdistdir}/doc/latex/philosophersimprint/sample.pdf
-%doc %{_texmfdistdir}/doc/latex/philosophersimprint/sample.tex
+%{_texmfdistdir}/tex/latex/philosophersimprint
+%doc %{_texmfdistdir}/doc/latex/philosophersimprint
 #- source
-%doc %{_texmfdistdir}/source/latex/philosophersimprint/philosophersimprint.dtx
-%doc %{_texmfdistdir}/source/latex/philosophersimprint/philosophersimprint.ins
+%doc %{_texmfdistdir}/source/latex/philosophersimprint
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
