@@ -3,7 +3,7 @@ Version:	56954
 Release:	2
 Summary:	Typesetting articles for "Philosophers' Imprint"
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/philosophersimprint
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/philosophersimprint
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/philosophersimprint.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/philosophersimprint.doc.r%{version}.tar.xz
